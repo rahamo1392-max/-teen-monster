@@ -3,240 +3,230 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090711">
 <title>TEEN MONSTER | Official</title>
 <style>
 *{box-sizing:border-box}
-:root{--bg:#090711;--panel:#171024;--purple:#a855f7;--pink:#ef55ff;--text:#fff;--muted:#c4b5d5}
-body{margin:0;background:radial-gradient(ellipse at top,#32104d,transparent 55%),var(--bg);color:var(--text);font-family:system-ui,Tahoma,sans-serif;line-height:1.8}
-header{position:sticky;top:0;background:#090711ed;border-bottom:1px solid #38244c;padding:14px;z-index:2}
+body{
+ margin:0;
+ background:radial-gradient(ellipse at top,#32104d,transparent 55%),#090711;
+ color:white;
+ font-family:Tahoma,Arial,sans-serif;
+ line-height:1.9;
+}
+header{
+ position:sticky;top:0;z-index:5;
+ background:#090711ed;
+ border-bottom:1px solid #49315e;
+ padding:15px;
+ text-align:center;
+}
+.logo{font-size:25px;font-weight:bold}
+.logo span{color:#ef55ff}
 nav{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
-button,.btn{border:0;border-radius:12px;padding:10px 16px;background:linear-gradient(120deg,#a855f7,#7025c9);color:white;font-weight:bold;cursor:pointer;text-decoration:none}
-.secondary{background:#21182e;border:1px solid #49345e}
+button{
+ border:0;border-radius:10px;padding:10px 15px;
+ background:linear-gradient(120deg,#a855f7,#7025c9);
+ color:white;cursor:pointer;font-size:14px;
+}
 .wrap{width:min(1000px,92%);margin:auto}
-.logo{font-size:20px;font-weight:1000;letter-spacing:2px;text-align:center}
-.logo span{color:var(--pink);text-shadow:0 0 18px var(--pink)}
-.hero{text-align:center;padding:75px 0 55px}
-.hero h1{font-size:clamp(42px,9vw,90px);line-height:1.1;margin:20px 0;background:linear-gradient(90deg,#fff,#d5a0ff,#ff89ef);color:transparent;background-clip:text}
-.hero p,.muted{color:var(--muted)}
-.section{padding:30px 0 45px;scroll-margin-top:120px}
-h2{font-size:28px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.card{padding:20px;background:linear-gradient(145deg,#20142f,#110d19);border:1px solid #49315e;border-radius:20px;overflow-wrap:anywhere}
-.card h3{margin-top:0}
-.photo{height:180px;border-radius:13px;background:linear-gradient(135deg,#32134d,#151021);display:grid;place-items:center;font-size:48px;margin-bottom:12px}
-input,textarea{width:100%;padding:12px;background:#0d0a14;border:1px solid #4b3560;border-radius:10px;color:white;font:inherit;margin:5px 0 12px}
+.hero{text-align:center;padding:65px 0}
+.hero h1{
+ font-size:clamp(38px,8vw,78px);
+ color:#e3b4ff;
+ margin:15px 0;
+}
+.section{padding:25px 0 40px;scroll-margin-top:130px}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:16px;
+}
+.card{
+ padding:18px;
+ background:linear-gradient(145deg,#20142f,#110d19);
+ border:1px solid #49315e;
+ border-radius:18px;
+ overflow-wrap:anywhere;
+}
+.photo{
+ height:210px;border-radius:12px;
+ background:#32134d;display:grid;
+ place-items:center;overflow:hidden;
+ font-size:55px;margin-bottom:12px;
+}
+.photo img{width:100%;height:100%;object-fit:cover}
+input,textarea,select{
+ display:block;width:100%;padding:12px;
+ margin:7px 0 15px;background:#0d0a14;
+ border:1px solid #4b3560;border-radius:9px;
+ color:white;font:inherit;
+}
 textarea{min-height:100px}
-.row{display:flex;gap:8px;flex-wrap:wrap}
-.status{padding:12px;border-radius:10px;background:#21182e;margin:12px 0}
-footer{text-align:center;padding:30px;border-top:1px solid #38244c;color:var(--muted)}
-a{color:#e3b4ff}
-@media(max-width:500px){.hero{padding:45px 0}.grid{grid-template-columns:1fr}}
+.muted{color:#c4b5d5}
+.member{cursor:pointer}
+.member:hover{border-color:#ef55ff}
+[hidden]{display:none!important}
+footer{text-align:center;padding:25px;color:#c4b5d5}
 </style>
 </head>
 <body>
 <header>
-<div class="logo">TEEN <span>MONSTER</span></div>
-<nav>
-<button onclick="go('home')">خانه</button>
-<button onclick="go('members')">اعضا</button>
-<button onclick="go('covers')">کاورها</button>
-<button onclick="go('news')">اخبار</button>
-<button onclick="go('fans')">فن‌ها</button>
-<button onclick="go('account')">حساب کاربری</button>
-</nav>
+ <div class="logo">TEEN <span>MONSTER</span></div>
+ <nav>
+  <button onclick="go('home')">خانه</button>
+  <button onclick="go('members')">اعضا</button>
+  <button onclick="go('manage')">مدیریت اعضا</button>
+ </nav>
 </header>
-
 <main class="wrap">
 <section class="hero" id="home">
-<p>✦ OFFICIAL GROUP WEBSITE ✦</p>
-<h1>TEEN MONSTER</h1>
-<p>صدای ما، انرژی ما، دنیای ما.</p>
-<p>BLACK · PURPLE · NEON</p>
-<div class="row" style="justify-content:center">
-<button onclick="go('covers')">دیدن کاورها</button>
-<button class="secondary" onclick="go('members')">اعضای گروه</button>
-<a class="btn secondary" id="rubika" href="#">کانال روبیکا</a>
-</div>
+ <p>✦ OFFICIAL GROUP WEBSITE ✦</p>
+ <h1>TEEN MONSTER</h1>
+ <p>صدای ما، انرژی ما، دنیای ما 💜</p>
+ <button onclick="go('members')">دیدن اعضای گروه</button>
 </section>
-
 <section class="section" id="members">
-<h2>✦ اعضای گروه</h2>
-<div class="grid" id="membersList">
-<div class="card"><div class="photo">🐺</div><h3>TEEN MONSTER</h3><p class="muted">معرفی اعضا به‌زودی اضافه می‌شود.</p></div>
-</div>
+ <h2>💜 اعضای گروه</h2>
+ <p class="muted">روی کارت هر عضو بزن تا اطلاعاتش را ببینی.</p>
+ <div class="grid" id="membersList"></div>
 </section>
-
-<section class="section" id="covers">
-<h2>♫ کاورها و اجراها</h2>
-<div class="grid" id="coversList">
-<div class="card"><div class="photo">🎤</div><h3>اولین کاور</h3><p class="muted">ویدئوها و لینک آهنگ‌های گروه اینجا قرار می‌گیرند.</p></div>
-</div>
-</section>
-
-<section class="section" id="news">
-<h2>✧ آخرین خبرها</h2>
-<div class="grid" id="newsList">
-<div class="card"><h3>به سایت رسمی ما خوش آمدید!</h3><p>خبرها و اطلاعیه‌های TEEN MONSTER اینجا منتشر می‌شوند.</p></div>
-</div>
-</section>
-
-<section class="section" id="fans">
-<h2>♡ فضای طرفدارها</h2>
-<div class="card">
-<p>به جامعهٔ طرفدارهای TEEN MONSTER خوش آمدید! 💜</p>
-<p class="muted">برای حفظ امنیت، اطلاعات شخصی خودت را در پیام‌های عمومی منتشر نکن.</p>
-</div>
-</section>
-
-<section class="section" id="account">
-<h2>🔐 حساب کاربری</h2>
-<div class="grid">
-<div class="card">
-<h3>ورود / ثبت‌نام</h3>
-<form id="authForm">
-<label for="email">ایمیل</label>
-<input id="email" type="email" required placeholder="you@example.com">
-<label for="password">رمز عبور</label>
-<input id="password" type="password" minlength="6" required placeholder="حداقل ۶ نویسه">
-<div class="row">
-<button type="submit">ورود</button>
-<button type="button" class="secondary" id="signup">ثبت‌نام</button>
-</div>
-</form>
-<div id="authStatus" class="status">برای ورود یا ثبت‌نام اطلاعاتت را وارد کن.</div>
-</div>
-<div class="card">
-<h3>وضعیت حساب</h3>
-<p id="accountStatus" class="muted">هنوز وارد نشده‌ای.</p>
-<button id="logout" class="secondary" hidden>خروج از حساب</button>
-</div>
-</div>
-</section>
-
-<section class="section" id="management" hidden>
-<h2>👑 پنل مدیریت</h2>
-<div class="card">
-<p>دسترسی مدیریت فقط برای حساب‌هایی فعال می‌شود که نقش آن‌ها به‌صورت امن در دیتابیس تنظیم شده باشد.</p>
-<h3>انتشار خبر</h3>
-<input id="newsTitle" placeholder="عنوان خبر">
-<textarea id="newsBody" placeholder="متن خبر"></textarea>
-<button id="publishNews">انتشار خبر</button>
-<h3 style="margin-top:25px">افزودن کاور</h3>
-<input id="coverTitle" placeholder="نام آهنگ یا اجرا">
-<input id="coverVideo" placeholder="لینک ویدئو">
-<button id="publishCover">افزودن کاور</button>
-</div>
+<section class="section" id="manage">
+ <h2>👑 مدیریت اعضا</h2>
+ <div class="card">
+  <p class="muted">
+   این نسخه برای پیش‌نمایش شخصی است.
+   اطلاعات در همین مرورگر ذخیره می‌شود.
+  </p>
+  <label>انتخاب عضو</label>
+  <select id="memberSelect" onchange="fillForm()"></select>
+  <label>اسم عضو</label>
+  <input id="name" maxlength="80" placeholder="اسم عضو">
+  <label>نقش عضو</label>
+  <input id="role" maxlength="100" placeholder="مثلاً خواننده یا رپر">
+  <label>معرفی عضو</label>
+  <textarea id="bio" maxlength="1200" placeholder="دربارهٔ عضو بنویس"></textarea>
+  <label>لینک عکس (اختیاری)</label>
+  <input id="photoUrl" type="url" placeholder="https://...">
+  <label>یا انتخاب عکس از گوشی</label>
+  <input id="photoFile" type="file" accept="image/*">
+  <button onclick="saveMember()">ذخیرهٔ تغییرات 💜</button>
+  <button onclick="resetMembers()">بازنشانی اعضا</button>
+  <p id="status" class="muted"></p>
+ </div>
 </section>
 </main>
-
 <footer>
-<div class="logo">TEEN <span>MONSTER</span></div>
-<p>با عشق و انرژی بنفش 💜</p>
+ <div class="logo">TEEN <span>MONSTER</span></div>
+ <p>با عشق و انرژی بنفش 💜🖤</p>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-function go(id){document.getElementById(id).scrollIntoView({behavior:"smooth"})}
-
-/* کلید عمومی پروژه؛ هرگز کلید service_role را اینجا قرار نده. */
-const SUPABASE_URL="https://tttffiyxqxphixryjavq.supabase.co";
-const SUPABASE_KEY="sb_publishable_WetuCjAtn1DCom1pOF3SKw_fxMbJdr_";
-const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
-
-/* لینک واقعی کانال را بعداً جایگزین کن. */
-const RUBIKA_CHANNEL_URL="#";
-document.getElementById("rubika").href=RUBIKA_CHANNEL_URL;
-
-const $=id=>document.getElementById(id);
-let user=null,role="fan";
-
-function showStatus(message){$("authStatus").textContent=message}
-
-async function refreshAccount(){
- const result=await db.auth.getUser();
- user=result.data.user||null;
- role="fan";
- if(user){
-  const r=await db.from("user_roles").select("role").eq("user_id",user.id).maybeSingle();
-  if(r.data)role=r.data.role;
+const defaults=Array.from({length:7},(_,i)=>({
+ name:"عضو "+(i+1),
+ role:"",
+ bio:"معرفی این عضو را می‌توانی از بخش مدیریت تغییر بدهی.",
+ photo:""
+}));
+let members=defaults.map(m=>({...m}));
+try{
+ const saved=localStorage.getItem("teenMonsterMembers");
+ if(saved){
+  const parsed=JSON.parse(saved);
+  if(Array.isArray(parsed)&&parsed.length===7)members=parsed;
  }
- $("accountStatus").textContent=user?
- "وارد شده‌ای: "+user.email+" | نقش: "+role:
- "هنوز وارد نشده‌ای.";
- $("logout").hidden=!user;
- $("management").hidden=!(role==="admin"||role==="member");
+}catch(e){}
+function go(id){
+ document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
-
-$("authForm").addEventListener("submit",async e=>{
- e.preventDefault();
- const {error}=await db.auth.signInWithPassword({
-  email:$("email").value.trim(),
-  password:$("password").value
- });
- if(error){showStatus("ورود انجام نشد: "+error.message);return}
- await refreshAccount();
- showStatus("با موفقیت وارد شدی 💜");
-});
-
-$("signup").addEventListener("click",async()=>{
- const email=$("email").value.trim();
- const password=$("password").value;
- if(!email||password.length<6){showStatus("ایمیل و رمز حداقل ۶ نویسه‌ای وارد کن.");return}
- const {data,error}=await db.auth.signUp({email,password});
- if(error){showStatus("ثبت‌نام انجام نشد: "+error.message);return}
- showStatus(data.session?"حساب ساخته شد.":"حساب ساخته شد؛ اگر تأیید ایمیل روشن است، ایمیلت را بررسی کن.");
- await refreshAccount();
-});
-
-$("logout").addEventListener("click",async()=>{
- await db.auth.signOut();
- await refreshAccount();
- showStatus("از حساب خارج شدی.");
-});
-
-$("publishNews").addEventListener("click",async()=>{
- if(!["admin","member"].includes(role)){alert("دسترسی مدیریت لازم است.");return}
- const title=$("newsTitle").value.trim(),body=$("newsBody").value.trim();
- if(!title||!body){alert("عنوان و متن خبر را وارد کن.");return}
- const {error}=await db.from("news").insert({title,body,created_by:user.id});
- if(error){alert("انتشار انجام نشد: "+error.message);return}
- alert("خبر منتشر شد 💜");
- loadNews();
-});
-
-$("publishCover").addEventListener("click",async()=>{
- if(!["admin","member"].includes(role)){alert("دسترسی مدیریت لازم است.");return}
- const title=$("coverTitle").value.trim();
- if(!title){alert("نام کاور را وارد کن.");return}
- const {error}=await db.from("covers").insert({
-  title,video_url:$("coverVideo").value.trim()||null,created_by:user.id
- });
- if(error){alert("افزودن کاور انجام نشد: "+error.message);return}
- alert("کاور اضافه شد 💜");
- loadCovers();
-});
-
-function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-
-async function loadNews(){
- const {data,error}=await db.from("news").select("title,body,created_at").order("created_at",{ascending:false}).limit(20);
- if(error)return;
- if(data.length)$("newsList").innerHTML=data.map(n=>`<article class="card"><h3>${esc(n.title)}</h3><p>${esc(n.body)}</p></article>`).join("");
+function safeUrl(value){
+ try{
+  const u=new URL(value,location.href);
+  return ["http:","https:","data:"].includes(u.protocol)?u.href:"";
+ }catch(e){return "";}
 }
-async function loadCovers(){
- const {data,error}=await db.from("covers").select("title,description,video_url").order("created_at",{ascending:false}).limit(30);
- if(error)return;
- if(data.length)$("coversList").innerHTML=data.map(c=>`<article class="card"><div class="photo">🎤</div><h3>${esc(c.title)}</h3>${c.video_url?`<a target="_blank" rel="noopener" href="${esc(c.video_url)}">▶ دیدن ویدئو</a>`:""}</article>`).join("");
+function escapeHTML(value){
+ return String(value??"").replace(/[&<>"']/g,c=>({
+  "&":"&amp;","<":"&lt;",">":"&gt;",
+  '"':"&quot;","'":"&#39;"
+ }[c]));
 }
-async function loadMembers(){
- const {data,error}=await db.from("profiles").select("display_name,bio,avatar_url").limit(50);
- if(error||!data?.length)return;
- $("membersList").innerHTML=data.map(p=>`<article class="card"><div class="photo">${p.avatar_url?`<img src="${esc(p.avatar_url)}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:12px">`:"🐺"}</div><h3>${esc(p.display_name||"عضو گروه")}</h3><p>${esc(p.bio||"")}</p></article>`).join("");
+function render(){
+ document.getElementById("membersList").innerHTML=members.map((m,i)=>`
+  <article class="card member" onclick="showMember(${i})">
+   <div class="photo">
+    ${m.photo
+     ?`<img src="${escapeHTML(safeUrl(m.photo))}" alt="عکس ${escapeHTML(m.name)}">`
+     :"🐺"}
+   </div>
+   <h3>${escapeHTML(m.name)}</h3>
+   ${m.role?`<p>💜 ${escapeHTML(m.role)}</p>`:""}
+   <p class="muted">${escapeHTML(m.bio)}</p>
+   <button type="button">اطلاعات بیشتر</button>
+  </article>
+ `).join("");
+ document.getElementById("memberSelect").innerHTML=members.map((m,i)=>
+  `<option value="${i}">${i+1}. ${escapeHTML(m.name)}</option>`
+ ).join("");
 }
-
-db.auth.onAuthStateChange(()=>setTimeout(refreshAccount,0));
-(async()=>{await refreshAccount();await Promise.all([loadNews(),loadCovers(),loadMembers()])})();
+function showMember(i){
+ const m=members[i];
+ alert(
+  m.name+"\n"+
+  (m.role?"نقش: "+m.role+"\n":"")+
+  "\n"+m.bio
+ );
+}
+function fillForm(){
+ const m=members[Number(document.getElementById("memberSelect").value)];
+ if(!m)return;
+ document.getElementById("name").value=m.name;
+ document.getElementById("role").value=m.role;
+ document.getElementById("bio").value=m.bio;
+ document.getElementById("photoUrl").value=
+  m.photo.startsWith("data:")?"":m.photo;
+ document.getElementById("photoFile").value="";
+}
+function save(){
+ localStorage.setItem("teenMonsterMembers",JSON.stringify(members));
+ render();
+ fillForm();
+}
+function saveMember(){
+ const i=Number(document.getElementById("memberSelect").value);
+ const file=document.getElementById("photoFile").files[0];
+ members[i].name=document.getElementById("name").value.trim()||"عضو "+(i+1);
+ members[i].role=document.getElementById("role").value.trim();
+ members[i].bio=document.getElementById("bio").value.trim();
+ if(file){
+  if(!file.type.startsWith("image/")){
+   alert("لطفاً یک فایل تصویری انتخاب کن.");
+   return;
+  }
+  if(file.size>1500000){
+   alert("حجم عکس باید کمتر از ۱٫۵ مگابایت باشد.");
+   return;
+  }
+  const reader=new FileReader();
+  reader.onload=()=>{
+   members[i].photo=reader.result;
+   save();
+   document.getElementById("status").textContent="تغییرات ذخیره شد 💜";
+  };
+  reader.readAsDataURL(file);
+  return;
+ }
+ const url=document.getElementById("photoUrl").value.trim();
+ if(url)members[i].photo=safeUrl(url);
+ save();
+ document.getElementById("status").textContent="تغییرات ذخیره شد 💜";
+}
+function resetMembers(){
+ if(!confirm("اطلاعات هفت عضو به حالت اولیه برگردد؟"))return;
+ members=defaults.map(m=>({...m}));
+ save();
+ document.getElementById("status").textContent="اعضا بازنشانی شدند.";
+}
+render();
+fillForm();
 </script>
 </body>
 </html>
